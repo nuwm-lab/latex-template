@@ -1,0 +1,36 @@
+# LaTeX intermediate and auxiliary files
+*.aux
+*.bbl
+*.blg
+*.brf
+*.fls
+*.fdb_latexmk
+*.log
+*.out
+*.toc
+*.lof
+*.lot
+*.gz
+*.synctex.gz
+*.nav
+*.snm
+*.vrb
+*.idx
+*.ilg
+*.ind
+
+# latexmk files
+latexmkrc
+
+# editor/temp
+*.swp
+*~
+
+# build directory
+_build/
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Note: PDFs are intentionally not ignored here so an example `main.pdf` can be tracked in the repo.
