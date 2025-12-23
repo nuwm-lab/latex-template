@@ -1,0 +1,201 @@
+\documentclass[12pt]{report}
+\usepackage[T2A]{fontenc} % Оголошення кириличного кодування
+\usepackage[utf8]{inputenc}
+\usepackage[ukrainian]{babel}
+\usepackage{amsmath, amssymb}
+\usepackage{graphicx}
+\usepackage{float}
+\usepackage{caption}
+\usepackage{listings}
+\usepackage{algorithm}
+\usepackage{algpseudocode}
+\usepackage{geometry}
+\usepackage{fancyhdr}
+\usepackage{csquotes}
+\usepackage[nottoc]{tocbibind}
+\usepackage{titlesec}
+\usepackage{url}
+\usepackage[numbers]{natbib}
+
+
+
+\geometry{a4paper, top=2cm, bottom=2cm, left=2.5cm, right=1.5cm}
+
+\titleformat{\chapter}[block]{\normalfont\Large\bfseries\filcenter}{РОЗДІЛ \thechapter.}{1em}{}
+\titleformat{\section}[block]{\normalfont\large\bfseries}{\thesection}{1em}{}
+
+\pagestyle{fancy}
+\fancyhf{}
+\fancyfoot[R]{\thepage}
+
+\begin{document}
+
+% Титулка
+\begin{titlepage}
+    \centering
+    \textbf{МІНІСТЕРСТВО ОСВІТИ І НАУКИ УКРАЇНИ\\
+    Національний університет водного господарства та природокористування\\[2ex]
+    Навчально-науковий інститут кібернетики, інформаційних технологій та інженерії\\
+    Кафедра комп’ютерних наук та прикладної математики}\\[8ex]
+
+    {\large \textbf{КУРСОВА РОБОТА}}\\[2ex]
+    з дисципліни «Назва дисципліни»\\[2ex]
+    на тему:\\
+    \textbf{Назва курсової роботи}\\[6ex]
+
+    Студент групи КН-21\\
+    Сергій Стадник\\[2ex]
+    Керівник: к.т.н., доц. Жуковський В.В.\\[6ex]
+
+    \vfill
+    Рівне — 2025
+\end{titlepage}
+
+% --------------------------------------------------------------------------------------
+
+\tableofcontents
+
+% --------------------------------------------------------------------------------------
+
+\newpage
+
+\chapter*{ВСТУП}
+\addcontentsline{toc}{chapter}{ВСТУП}
+
+У вступі обґрунтовується актуальність теми, формулюється мета, завдання, об’єкт і предмет дослідження. Також можна навести короткий опис структури роботи.
+
+% --------------------------------------------------------------------------------------
+
+\chapter{Теоретичні основи теми}
+
+\section{Аналіз предметної області}
+
+% Формула
+Нижче буде наведено як записувати формули, таблиці, графіки, діаграми та програмних код. Як приклад, розглянемо класичну формулу:
+\begin{equation}
+    E = mc^2
+\end{equation}
+де $E$ — енергія, $m$ — маса, $c$ — швидкість світла.
+
+% таблиця
+А ось так повинна виглядати таблиця. Таблиця повинна містити нумерацію відповідно до розділа та назву.
+\begin{table}[H]
+\centering
+\caption{Порівняльна таблиця характеристик}
+\label{tab:comparison} % Унікальний ідентифікатор/назва таблиці
+\begin{tabular}{|c|c|c|}
+\hline
+Назва & Значення & Одиниця виміру \\
+\hline
+Швидкість & 299792458 & м/с \\
+Маса & 1.0 & кг \\
+Енергія & $9 \cdot 10^{16}$ & Дж \\
+\hline
+\end{tabular}
+\end{table}
+Як видно з таблиці \ref{tab:comparison}, характеристики представлені у порівняльному вигляді. В цьому рядку ми використали посилання на таблицю з назвою comparison.
+% Картинка
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.5\textwidth]{example.png}
+    \caption{Приклад зображення}
+    \label{fig:example} % Унікальний ідентифікатор зображення для посилань
+\end{figure}
+Як видно на рисунку \ref{fig:example}, зображення ілюструє відповідний приклад.
+% --------------------------------------------------------------------------------------
+
+\newpage
+\chapter{Практична частина}
+Тут ми наведемо приклади використання лістингу коду.
+\begin{lstlisting}[language=Python, caption=Простий приклад коду Python, label={lst:python_example}]
+def factorial(n):
+    if n == 0:
+        return 1
+    else:
+        return n * factorial(n-1)
+\end{lstlisting}
+Як показано в лістингу \ref{lst:python_example}, ця функція рекурсивно обчислює факторіал.
+
+% приклад алгоритму
+\begin{algorithm}
+\caption{Обчислення факторіалу}
+\label{alg:factorial} % Унікальний ідентифікатор алгоритму
+\begin{algorithmic}[1]
+\Function{Factorial}{$n$}
+    \If{$n = 0$}
+        \State \Return 1
+    \Else
+        \State \Return $n \cdot$ \Call{Factorial}{$n-1$}
+    \EndIf
+\EndFunction
+\end{algorithmic}
+\end{algorithm}
+% --------------------------------------------------------------------------------------
+Як показано в алгоритмі \ref{alg:factorial}, рекурсивний виклик використовується для обчислення факторіалу.
+
+LaTeX є потужним інструментом для оформлення наукових і технічних документів, що детально описано в роботі Малюка А.Ю. [\cite{latexcompanion}]. При цьому важливо дотримуватися стандартів оформлення, як зазначено в ДСТУ 3008:2015 [\cite{dstu}]. Для програмування та автоматизації процесів зручно використовувати мову Python, описану у відповідній документації [\cite{python}]. Крім того, платформа Overleaf надає шаблони для дисертацій, що можуть бути корисними при написанні академічних текстів [\cite{overleaf}]. Університет НУВГП приділяє значну увагу академічній доброчесності, про що йдеться на офіційному сайті [\cite{nuwm}].
+
+\chapter*{ВИСНОВКИ}
+\addcontentsline{toc}{chapter}{ВИСНОВКИ}
+
+У цій роботі було розглянуто теоретичні аспекти обраної теми, проведено аналіз предметної області та розроблено практичну частину у вигляді прикладів коду, алгоритмів, формул, таблиць і графічних матеріалів. 
+
+Основні результати:
+\begin{itemize}
+    \item узагальнено поняття та методи, що стосуються теми;
+    \item побудовано прикладну реалізацію поставленої задачі;
+    \item надано приклади візуалізації (рисунки), формулювання математичних виразів (формули) та представлення алгоритмів (код і псевдокод);
+    \item показано можливість подальшого застосування напрацювань у курсовій та дипломній роботі.
+\end{itemize}
+
+Отримані результати підтверджують доцільність використання підходу, описаного у роботі, а також демонструють базову структуру документа згідно з вимогами університету.
+
+% --------------------------------------------------------------------------------------
+\renewcommand{\bibname}{Список використаних джерел}
+\begin{thebibliography}{9}
+
+
+\bibitem{latexcompanion}
+Малюк А.Ю. Основи роботи з LaTeX / А.Ю. Малюк. — К.: Вища школа, 2021. — 156 с.
+
+\bibitem{dstu}
+ДСТУ 3008:2015. Документація. Звіти у сфері науки та техніки. Структура і правила оформлення.
+
+\bibitem{python}
+Python Software Foundation. Python Language Reference, version 3.9. [Електронний ресурс]. – Режим доступу: \url{https://www.python.org}
+
+\bibitem{overleaf}
+Overleaf. PUT-CREEF dissertation template. – [Електронний ресурс]. – \url{https://www.overleaf.com/latex/templates/put-creef-dissertation-template/syzpgdspfgvr}
+
+\bibitem{nuwm}
+НУВГП. Академічна доброчесність – [Електронний ресурс]. – \url{https://nuwm.edu.ua/sp/akademichna-dobrochesnistj}
+\end{thebibliography}
+
+% --------------------------------------------------------------------------------------
+
+\appendix
+\chapter*{ДОДАТОК А}
+\addcontentsline{toc}{chapter}{ДОДАТОК А}
+
+\section*{Фрагмент програмного коду}
+\addcontentsline{toc}{section}{Фрагмент програмного коду}
+
+\begin{lstlisting}[language=Python, caption=Функція обчислення факторіалу]
+def factorial(n):
+    if n == 0:
+        return 1
+    else:
+        return n * factorial(n-1)
+\end{lstlisting}
+
+\section*{Схема архітектури}
+\addcontentsline{toc}{section}{Схема архітектури}
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.8\textwidth]{architecture-diagram.png}
+    \caption*{Рис. А1 – Схема архітектури програмного рішення}
+\end{figure}
+
+
+\end{document}
