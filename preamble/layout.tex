@@ -1,0 +1,40 @@
+\geometry{left=25mm, right=15mm, top=20mm, bottom=20mm, headsep=5mm}
+
+\onehalfspacing
+\setlength{\parskip}{0pt}
+\setlength{\parindent}{1.25cm}
+\raggedbottom
+\justifying
+
+% Колонтитули (номер сторінки)
+\pagestyle{fancy}
+\fancyhf{}
+\fancyhead[R]{\fontsize{10pt}{12pt}\selectfont \textcolor{black!50}{\thepage}}
+\renewcommand{\headrulewidth}{0pt}
+
+\lstdefinestyle{nocodeframe}{
+    basicstyle=\ttfamily\small,
+    keywordstyle=\color{blue},
+    commentstyle=\color{green!60!black},
+    stringstyle=\color{red},
+    numbers=left,
+    numberstyle=\small\color{gray},
+    stepnumber=1,
+    numbersep=7pt,
+    showstringspaces=false,
+    breaklines=true,
+    frame=none,
+    tabsize=2,
+}
+
+\lstdefinelanguage{TypeScript}{
+    language=Java,
+    morekeywords={any, boolean, number, string, interface, type, let, const, function, export, import, from},
+    sensitive=true,
+}
+
+\lstdefinelanguage{ArduinoCpp}{
+    language=C++,                 % базова мова
+    morekeywords={setup, loop, pinMode, digitalWrite, delay, HIGH, LOW, Serial},
+    sensitive=true,
+}

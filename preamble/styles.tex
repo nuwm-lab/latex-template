@@ -1,0 +1,33 @@
+\renewcommand{\contentsname}{\centering\MakeUppercase{Зміст}}
+\renewcommand{\cftaftertoctitle}{\hfill}
+\renewcommand{\cfttoctitlefont}{\hfill\normalfont\fontsize{14pt}{17pt}\selectfont\bfseries}
+
+\pretocmd{\tableofcontents}{\begingroup\hyphenpenalty=50\exhyphenpenalty=50}{}{}
+\apptocmd{\tableofcontents}{\endgroup}{}{}
+
+\renewcommand{\cftsecdotsep}{1.0}
+\renewcommand{\cftsubsecdotsep}{1.0}
+\renewcommand{\cftsubsubsecdotsep}{1.0}
+
+\renewcommand{\cftsecleader}{\normalfont\fontsize{14pt}{8pt}\selectfont\cftdotfill{\cftsecdotsep}}
+\renewcommand{\cftsubsecleader}{\normalfont\fontsize{14pt}{8pt}\selectfont\cftdotfill{\cftsubsecdotsep}}
+\renewcommand{\cftsubsubsecleader}{\normalfont\fontsize{14pt}{8pt}\selectfont\cftdotfill{\cftsubsubsecdotsep}}
+
+\renewcommand{\cftsecfont}{\normalfont\fontsize{14pt}{14pt}\selectfont}
+\renewcommand{\cftsecpagefont}{\normalfont\fontsize{14pt}{14pt}\selectfont}
+\renewcommand{\cftsubsecfont}{\normalfont\fontsize{14pt}{14pt}\selectfont}
+\renewcommand{\cftsubsecpagefont}{\normalfont\fontsize{14pt}{14pt}\selectfont}
+
+\setlength{\cftsubsecindent}{.5cm}
+\setlength{\cftsubsubsecindent}{1.5cm}
+\setlength{\cftbeforesecskip}{0pt}
+
+\makeatletter
+\renewcommand{\cftsecnumwidth}{0pt}
+\renewcommand{\cftsubsecnumwidth}{0pt}
+\renewcommand{\cftsubsubsecnumwidth}{0pt}
+
+\patchcmd{\l@section}{#1}{{\def\numberline##1{РОЗДІЛ~##1.~}\MakeUppercase{#1}}}{}{}
+\patchcmd{\l@subsection}{#1}{{\def\numberline##1{##1.~ }#1}}{}{}
+\patchcmd{\l@subsubsection}{#1}{{\def\numberline##1{##1.~ }#1}}{}{}
+\makeatother

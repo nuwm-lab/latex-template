@@ -1,0 +1,101 @@
+\customSection[sec:analysis]{Аналіз предметної області}{0em}
+
+\customSubSection[sec:analysis_two_level_section]{Оформлення коду}{0em}
+
+Оформлення коду є важливим аспектом при написанні технічної документації. Нижче наведено приклади оформлення коду для різних мов програмування.
+
+% ----------------------
+% Example 1: TypeScript
+% ----------------------
+TypeScript:
+\begin{lstlisting}[style=nocodeframe, language=TypeScript]
+interface User {
+    name: string;
+    age: number;
+}
+
+const user: User = {
+    name: "Ivan",
+    age: 17
+};
+
+function greet(u: User): void {
+    console.log(`Hello, ${u.name}`);
+}
+
+greet(user);
+\end{lstlisting}
+
+% ----------------------
+% Example 2: Arduino C++
+% ----------------------
+ArduinoCpp:
+\begin{lstlisting}[style=nocodeframe, language=ArduinoCpp]
+#include <Arduino.h>
+
+void setup() {
+    Serial.begin(9600);
+}
+
+void loop() {
+    Serial.println("Hello Arduino");
+}
+\end{lstlisting}
+
+Lorem Ipsum — це стандартний заповнювач тексту в поліграфії та верстці, який використовується з 1500-х років. Він допомагає демонструвати макети без використання реального змісту.
+
+\customSubSection[sec:analysis_two_level_section]{Оформлення рисунків}{1em}
+
+Оформлення рисунків є важливим аспектом при написанні технічної документації. Нижче наведено приклад оформлення рисунка.
+
+\setfigure[fig:intro_example2]{0.8\textwidth}{assets/img}{Тестовий рисунок}
+
+На \textbf{рис.~\ref{fig:intro_example2}} показано приклад зображення, яке ілюструє відповідний приклад.
+
+\customSubSection[sec:analysis_third_level_section]{Оформлення таблиць}{1em}
+
+\begin{spacing}{1.3}
+    \noindent
+    \begin{xltabular}{\textwidth}{| c | >{\raggedright\arraybackslash}X | c |}
+        \caption{Список дисциплін} \label{tab:disciplines} \\
+        \hline
+        \textbf{№} & \textbf{Назва дисципліни} & \textbf{К-ть кредитів ЄКТС} \\ \hline
+        \endfirsthead
+
+        \multicolumn{3}{r}{\textit{}} \\ \hline
+        \textbf{№} & \textbf{Назва дисципліни} & \textbf{К-ть кредитів ЄКТС} \\ \hline
+        \endhead
+
+        1 & Методи та засоби інженерії програмного забезпечення & 220 \\ \hline
+        1 & Методи та засоби інженерії програмного забезпечення & 220 \\ \hline
+        1 & Методи та засоби інженерії програмного забезпечення & 220 \\ \hline
+        1 & Методи та засоби інженерії програмного забезпечення & 220 \\ \hline
+        1 & Методи та засоби інженерії програмного забезпечення & 220 \\ \hline
+    \end{xltabular}
+\end{spacing}
+
+\customSubSection[sec:analysis_third_level_section]{Міждокументні посилання}{1em}
+
+Як зазначено в підрозділі \ref{sec:analysis_two_level_section}, аналіз предметної області є критично важливим.
+
+На \textbf{рис.~\ref{fig:intro_example2}} продемонстровано приклад зображення, яке ілюструє відповідний приклад.
+
+Тема Arduino розглядається детально у багатьох джерелах \citecustom{1}, \citecustom{3}, а практичні проекти описані у \citecustom{4}.
+
+Дані дисциплін наведені у \tabref{tab:disciplines}.
+
+\begin{spacing}{1.3}
+    \noindent
+    \begin{xltabular}{\textwidth}{| c | >{\raggedright\arraybackslash}X | c |}
+        \caption{Ще одна тестова таблиця} \label{tab:test_table} \\
+        \hline
+        \textbf{№} & \textbf{Тест} & \textbf{Тест} \\ \hline
+        \endfirsthead
+
+        \multicolumn{3}{r}{\textit{}} \\ \hline
+        \textbf{№} & \textbf{Тест} & \textbf{Тест} \\ \hline
+        \endhead
+
+        1 & Методи та засоби інженерії програмного забезпечення & 220 \\ \hline
+    \end{xltabular}
+\end{spacing}

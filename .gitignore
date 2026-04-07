@@ -27,10 +27,10 @@ latexmkrc
 *~
 
 # build directory
-_build/
+build/
 
 # OS
 .DS_Store
 Thumbs.db
 
-# Note: PDFs are intentionally not ignored here so an example `main.pdf` can be tracked in the repo.
+.idea/

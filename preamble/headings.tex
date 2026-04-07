@@ -1,0 +1,26 @@
+\newcommand{\customLeading}{1.5em}
+
+\AtBeginDocument{
+    \fontsize{14pt}{\customLeading}\selectfont
+    \setlength{\parskip}{0pt}
+    \setlength{\parindent}{1.25cm}
+}
+
+\renewcommand{\thesection}{\Roman{section}}
+\renewcommand{\thesubsection}{\arabic{section}.\arabic{subsection}}
+\renewcommand{\thesubsubsection}{\arabic{section}.\arabic{subsection}.\arabic{subsubsection}}
+
+\titleformat{\section}[block]
+{\normalfont\fontsize{14pt}{\customLeading}\selectfont\bfseries\centering}
+{РОЗДІЛ \thesection.\ }{0pt}{\MakeUppercase}
+\titlespacing*{\section}{0pt}{0pt}{0pt}
+
+\titleformat{\subsection}[block]
+{\normalfont\fontsize{14pt}{\customLeading}\selectfont\bfseries\centering}
+{\thesubsection.\ }{0pt}{}
+\titlespacing*{\subsection}{0pt}{0pt}{0pt}
+
+\titleformat{\subsubsection}[block]
+{\normalfont\fontsize{14pt}{\customLeading}\selectfont\bfseries\centering}
+{\thesubsubsection.\ }{0pt}{}
+\titlespacing*{\subsubsection}{0pt}{0pt}{0pt}

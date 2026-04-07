@@ -1,0 +1,123 @@
+\captionsetup[table]{
+    justification=raggedleft,
+    singlelinecheck=false,
+    font=it,
+    labelfont=it,
+    skip=10pt
+}
+
+\newcommand{\uniterablesection}[1]{%
+    \clearpage\phantomsection
+    \addcontentsline{toc}{section}{\MakeUppercase{#1}}
+    \section*{#1}
+}
+
+% Титульна сторінка
+\newcommand{\maketitlepage}[9]{%
+    \begin{titlepage}
+    \thispagestyle{empty}
+    \begin{center}
+    \MakeUppercase{\textbf{#1}}\\[0.5em] \textbf{#2}\\[1em] \textbf{#3}\\[8em]
+    \MakeUppercase{\textbf{#4}}\\[0em] з дисципліни «#5»\\[0em] на тему:\\[0em] «#6»
+    \end{center}
+    \vfill\noindent\hfill
+    \begin{tabular}{l} Виконав студент ННІКІТІ: \\ групи: #7 \\ #8 \\[1em] Науковий керівник: \\ \parbox[t]{8cm}{#9} \end{tabular}
+    \vspace{6em}\begin{center} Рівне – 2026 \end{center}
+    \end{titlepage}
+}
+
+% Оформлення рисунків
+\DeclareCaptionLabelFormat{myformat}{\textbf{#1 #2.}}
+
+\captionsetup[table]{
+    labelsep=period,
+    justification=raggedleft,
+    singlelinecheck=false,
+    font=it
+}
+
+\captionsetup[figure]{
+    name=Рис.,
+    labelformat=myformat,
+    labelsep=space,
+    justification=centering,
+    singlelinecheck=false,
+    font=normalsize,
+    textfont=normalfont,
+}
+
+\counterwithin{figure}{section}
+\counterwithin{table}{section}
+
+\renewcommand{\thefigure}{\arabic{section}.\arabic{figure}}
+\renewcommand{\thetable}{\arabic{section}.\arabic{table}}
+\renewcommand{\thesection}{\Roman{section}}
+\renewcommand{\thesubsection}{\arabic{section}.\arabic{subsection}}
+\renewcommand{\thesubsubsection}{\arabic{section}.\arabic{subsection}.\arabic{subsubsection}}
+
+\newcommand{\setfigure}[4][]{
+    \begin{center}
+    \nopagebreak
+    \includegraphics[width=#2]{#3}
+    \captionof{figure}{#4}
+    \label{#1}
+    \end{center}
+    \vspace{-1em}
+}
+
+% --- customSection ---
+\newcommand{\customSection}[3][]{%
+    \ifx
+        \relax#3\relax\else
+        \vspace{#3}
+    \fi
+    \section{#2}\label{#1}%
+}
+
+% --- customSubsection ---
+\newcommand{\customSubSection}[3][]{%
+    \ifx
+        \relax#3\relax\else
+        \vspace{#3}
+    \fi
+    \subsection{#2}\label{#1}%
+}
+
+% --- customSubSubSection ---
+\newcommand{\customSubSubSection}[3][]{%
+    \ifx
+        \relax#3\relax\else
+        \vspace{#3}
+    \fi
+    \subsubsection{#2}\label{#1}%
+}
+
+\newcommand{\customBibliography}[1]{%
+    \phantomsection
+    \label{#1}
+    \begin{enumerate}[noitemsep, topsep=0pt, leftmargin=*, label=\arabic*.]
+}
+
+\newcommand{\closeCustomBibliography}{%
+    \end{enumerate}
+}
+
+% Книга або стаття (IEEE Style)
+% #1 - Автори (І. Прізвище)
+% #2 - Назва (Книги або Статті)
+% #3 - Видавництво / Конференція / Місто
+% #4 - Рік, сторінки, DOI
+\newcommand{\bibitemieee}[4]{%
+    \item #1, ``#2,'' \textit{#3}, #4.
+}
+
+% Електронний ресурс (IEEE Style)
+\newcommand{\bibitemweb}[3]{%
+    \item #1. [Online]. Available: \url{#2}. [Accessed: #3].
+}
+
+% коротке посилання в тексті
+\newcommand{\citecustom}[1]{[#1]}
+
+% посилання на таблицю
+\newcommand{\tabref}[1]{табл.~\ref{#1}}
